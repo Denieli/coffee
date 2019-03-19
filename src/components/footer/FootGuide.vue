@@ -1,25 +1,26 @@
 <template>
   <div class="cof-foot-container">
+    <!-- 底部导航栏 -->
     <van-tabbar v-model="active">
-      <van-tabbar-item to="/home">
+      <van-tabbar-item to="/home" >
         <span>首页</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? home.active : home.normal">
+        <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+home.active : baseUrl+home.normal">
       </van-tabbar-item>
-      <van-tabbar-item to="/menu">
+      <van-tabbar-item to="/menu" >
         <span>菜单</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? menu.active : menu.normal">
+        <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+menu.active : baseUrl+menu.normal">
       </van-tabbar-item>
       <van-tabbar-item to="/order">
         <span>订单</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? order.active : order.normal">
+        <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+order.active : baseUrl+order.normal">
       </van-tabbar-item>
-      <van-tabbar-item to="/shopcar" info="3">
+      <van-tabbar-item to="/shopcar" info="1">
         <span>购物车</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? shopcar.active : shopcar.normal">
+        <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+shopcar.active : baseUrl+shopcar.normal">
       </van-tabbar-item>
       <van-tabbar-item to="/person">
         <span>我的</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? person.active : person.normal">
+        <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+person.active : baseUrl+person.normal">
       </van-tabbar-item>
     </van-tabbar>
   </div>
@@ -29,27 +30,31 @@
     data() {
       return {
         active: 0,
+        baseUrl:"https://www.foreignkey.top/images/coffee/coffee/tabber/",
         home: {
-          normal: 'https://www.foreignkey.top/images/coffee/coffee/tabber/home.png',
-          active: 'https://www.foreignkey.top/images/coffee/coffee/tabber/home-fill.png'
+          normal: 'home.png',
+          active: 'home-fill.png'
         },
         menu: {
-          normal: 'https://www.foreignkey.top/images/coffee/coffee/tabber/menu.png',
-          active: 'https://www.foreignkey.top/images/coffee/coffee/tabber/menu-fill.png'
+          normal: 'menu.png',
+          active: 'menu-fill.png'
         },
         order: {
-          normal: 'https://www.foreignkey.top/images/coffee/coffee/tabber/order.png',
-          active: 'https://www.foreignkey.top/images/coffee/coffee/tabber/order-fill.png'
+          normal: 'order.png',
+          active: 'order-fill.png'
         },
         shopcar: {
-          normal: 'https://www.foreignkey.top/images/coffee/coffee/tabber/shopcar.png',
-          active: 'https://www.foreignkey.top/images/coffee/coffee/tabber/shopcar-fill.png'
+          normal: 'shopcar.png',
+          active: 'shopcar-fill.png'
         },
         person: {
-          normal: 'https://www.foreignkey.top/images/coffee/coffee/tabber/person.png',
-          active: 'https://www.foreignkey.top/images/coffee/coffee/tabber/person-fill.png'
+          normal: 'person.png',
+          active: 'person-fill.png'
         }
       }
+    },
+    methods:{
+     
     }
   }
 

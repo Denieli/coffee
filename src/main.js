@@ -15,6 +15,8 @@ import { TreeSelect } from 'vant';
 Vue.use(TreeSelect);
 import { Cell, CellGroup } from 'vant';
 Vue.use(Cell).use(CellGroup);
+import { NavBar } from 'vant';
+Vue.use(NavBar);
 
 /* eslint-disable no-new */
 new Vue({

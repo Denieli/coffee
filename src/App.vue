@@ -1,20 +1,15 @@
 <template>
   <div id="app">
     <router-view/>
-    <foot-guide></foot-guide>
   </div>
 </template>
 
 <script>
-import footGuide from './components/footer/FootGuide.vue'
 export default {
   data(){
     return{
 
     }
-  },
-  components:{
-    'foot-guide':footGuide
   }
 }
 </script>

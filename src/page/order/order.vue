@@ -1,7 +1,7 @@
 <template>
     <div>订单
         <!-- 底部导航栏 -->
-        <foot-guide></foot-guide>
+        <foot-guide :activeId="activeId"></foot-guide>
     </div>
 </template>
 <script>
@@ -9,7 +9,7 @@
  export default{
      data(){
         return {
-            
+            activeId:2
         }
      },
      components:{

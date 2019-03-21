@@ -1,6 +1,6 @@
 <template>
     <div class="conf-shopcar-container">购物车
-      <foot-guide></foot-guide>
+      <foot-guide :activeId="activeId"></foot-guide>
     </div>
   </template>
   <script>
@@ -8,7 +8,7 @@
     export default {
       data() {
         return {
-         
+          activeId:3,
         }
       },
       components: {

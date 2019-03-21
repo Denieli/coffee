@@ -30,7 +30,7 @@
       </div>
    
       <!-- 底部导航开始 -->
-      <foot-guide></foot-guide>
+      <foot-guide :activeId="activeId"></foot-guide>
     </div>
   </template>
   <script>
@@ -38,6 +38,7 @@
     export default {
       data() {
         return {
+          activeId:0,
           baseUrl: "https://www.foreignkey.top/images/coffee/coffee/icon/",
           list: [{
               title: "现在下单",

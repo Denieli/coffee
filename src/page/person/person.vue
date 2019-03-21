@@ -34,7 +34,7 @@
         </div>
       </div>
       <!-- 底部图片结束 -->
-      <foot-guide></foot-guide>
+      <foot-guide :activeId="activeId"></foot-guide>
     </div>
   </template>
   <script>
@@ -43,6 +43,7 @@
     export default {
       data() {
         return {
+          activeId:4,
           list: [{
               title: "个人资料",
               icon: "icon-person"

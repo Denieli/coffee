@@ -1,7 +1,7 @@
 <template>
   <div class="cof-foot-container">
     <!-- 底部导航栏 -->
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" fixed>
       <van-tabbar-item to="/home" >
         <span>首页</span>
         <img slot="icon" slot-scope="props" :src="props.active ? baseUrl+home.active : baseUrl+home.normal">
@@ -29,7 +29,7 @@
   export default {
     data() {
       return {
-        active: 0,
+        active: this.activeId,
         baseUrl:"https://www.foreignkey.top/images/coffee/coffee/tabber/",
         home: {
           normal: 'home.png',
@@ -55,6 +55,9 @@
     },
     methods:{
      
+    },
+    props:{
+      activeId:Number
     }
   }
 

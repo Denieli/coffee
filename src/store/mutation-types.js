@@ -1,0 +1,1 @@
+export const RECEIVE_COFFEE='receive_coffee'//接收咖啡

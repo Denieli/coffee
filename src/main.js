@@ -18,10 +18,14 @@ Vue.use(Cell).use(CellGroup);
 import { NavBar } from 'vant';
 Vue.use(NavBar);
 
+import store from './store'
+import './mock/mockServer'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  render: c=>c(App)
+  render: c=>c(App),
+  store
  
 })

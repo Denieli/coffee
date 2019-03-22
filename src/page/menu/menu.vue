@@ -1,65 +1,65 @@
 <template>
   <div class="cof-menu-container">
-    <van-nav-bar title="选择咖啡与小食" fixed />
-    <div class="conf-zz"><img src="https://www.foreignkey.top/images/coffee/coffee/menu/menu-zz.png" /></div>
+    <header-guide title="选择咖啡与小食" src="menu/menu-zz.png"></header-guide>
     <!-- 分类 -->
-    <div class="conf-wapper">
+    <div class="conf-menu-wapper">
+      <div class="conf-wapper">
 
-      <div class="conf-menu-wapper">
-        <div>
-          <ul>
-            <li class="conf-menu-item" :class="{current:index==currentIndex}" @click="clickCurrentIndex(index)"
-              v-for="(item,index) in coffee" :key="index"><span>{{item.menu}}</span></li>
-          </ul>
-        </div>
-      </div>
-      <!-- 咖啡列表 -->
-      <div class="conf-coffee-wapper">
-        <div ref="findUi">
-          <div class="findUi" v-for="(item,index) in coffee" :key="index">
-            <div class="conf-coffee-item-title">
-              <div class="conf-coffee-item" v-if="!item.title">
-                <div class="conf-category">
-                  <h6>{{item.menu}}</h6>
-                  <div class="conf-addline-wapper">
-                    <div class="conf-addline"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="conf-coffee-item" v-if="item.title">
-                <h6>{{item.menu}}</h6>
-                <div class="conf-category">
-                  <span class="conf-describe">{{item.title}}</span>
-                  <div class="conf-addline-wapper">
-                    <div class="conf-addline"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="conf-menu-wapper">
+          <div>
             <ul>
-              <li class="conf-coffee-item-content" v-for="(goods,num) in item.goods" :key="num">
-                <div class="conf-content-left">
-                  <div class="conf-coffee-logo"> <img
-                      :src='"https://www.foreignkey.top/images/coffee/part5/"+goods.photo' />
-                  </div>
-                  <span class="conf-pag"></span>
-                </div>
-                <div class="conf-content-right">
-                  <h6>{{goods.name}}</h6>
-                  <p>{{goods.alias}}</p>
-                  <p>默认：{{goods.dafalut}}</p>
-                  <div class="conf-number">
-                    <div>{{goods.money}}</div>
-                    <div><a class="conf-num"><span class="iconfont icon-add"></span></a></div>
-                  </div>
-                </div>
-              </li>
+              <li class="conf-menu-item" :class="{current:index==currentIndex}" @click="clickCurrentIndex(index)"
+                v-for="(item,index) in coffee" :key="index"><span>{{item.menu}}</span></li>
             </ul>
+          </div>
+        </div>
+        <!-- 咖啡列表 -->
+        <div class="conf-coffee-wapper">
+          <div ref="findUi">
+            <div class="findUi" v-for="(item,index) in coffee" :key="index">
+              <div class="conf-coffee-item-title">
+                <div class="conf-coffee-item" v-if="!item.title">
+                  <div class="conf-category">
+                    <h6>{{item.menu}}</h6>
+                    <div class="conf-addline-wapper">
+                      <div class="conf-addline"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="conf-coffee-item" v-if="item.title">
+                  <h6>{{item.menu}}</h6>
+                  <div class="conf-category">
+                    <span class="conf-describe">{{item.title}}</span>
+                    <div class="conf-addline-wapper">
+                      <div class="conf-addline"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul>
+                <li class="conf-coffee-item-content" v-for="(goods,num) in item.goods" :key="num">
+                  <div class="conf-content-left">
+                    <div class="conf-coffee-logo"> <img
+                        :src='"https://www.foreignkey.top/images/coffee/part5/"+goods.photo' />
+                    </div>
+                    <span class="conf-pag"></span>
+                  </div>
+                  <div class="conf-content-right">
+                    <h6>{{goods.name}}</h6>
+                    <p>{{goods.alias}}</p>
+                    <p>默认：{{goods.dafalut}}</p>
+                    <div class="conf-number">
+                      <div>{{goods.money}}</div>
+                      <div><a class="conf-num"><span class="iconfont icon-add"></span></a></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- 底部导航栏 -->
     <foot-guide :activeId="activeId"></foot-guide>
   </div>
@@ -67,6 +67,7 @@
 <script>
   import footGuide from '../../components/footer/FootGuide.vue'
   import BScroll from 'better-scroll'
+  import header from '../../components/header/header.vue'
   import {
     mapState
   } from 'vuex'
@@ -75,7 +76,7 @@
       return {
         activeId: 1, //底部导航栏点击到第几个
         tops: [], //记录每个列表的位置
-        startY: 0//当前列表的位置
+        startY: 0 //当前列表的位置
       };
     },
     mounted() {
@@ -134,30 +135,33 @@
       }
     },
     components: {
-      'foot-guide': footGuide
+      'header-guide': header,
+      'foot-guide': footGuide,
     }
   }
 
 </script>
 <style lang="scss" scoped>
   .cof-menu-container {
-
-    .conf-zz {
-      margin-top: 46px;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .conf-wapper {
+    height: 100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .conf-menu-wapper{
+      position: relative;
+      height: 100%;
+      margin-bottom:50px;
+      .conf-wapper {
       overflow: hidden;
       text-align: center;
       display: flex;
       justify-content: space-between;
       position: absolute;
-      top: 161px;
-      bottom: 50px;
+      top: 0;
+      bottom: 0;
       left: 0;
       right: 0;
 
@@ -213,6 +217,7 @@
           justify-content: space-between;
           padding: 12px 15px 14px 12px;
           position: relative;
+
           &::after {
             content: ' ';
             position: absolute;
@@ -335,6 +340,8 @@
         }
       }
     }
+    }
+   
 
   }
 

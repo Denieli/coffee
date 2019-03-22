@@ -17,6 +17,16 @@ import { Cell, CellGroup } from 'vant';
 Vue.use(Cell).use(CellGroup);
 import { NavBar } from 'vant';
 Vue.use(NavBar);
+import { Checkbox, CheckboxGroup } from 'vant';
+Vue.use(Checkbox).use(CheckboxGroup);
+import { Button } from 'vant';
+Vue.use(Button);
+import { Row, Col } from 'vant';
+Vue.use(Row).use(Col);
+import { Tab, Tabs } from 'vant';
+Vue.use(Tab).use(Tabs);
+import { Panel } from 'vant';
+Vue.use(Panel);
 
 import store from './store'
 import './mock/mockServer'

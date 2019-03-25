@@ -7,29 +7,11 @@ import router from './router'
 Vue.config.productionTip = false
 
 
-import {Tabbar,TabbarItem} from 'vant';
-Vue.use(Tabbar).use(TabbarItem);
-import { Swipe, SwipeItem } from 'vant';
-Vue.use(Swipe).use(SwipeItem);
-import { TreeSelect } from 'vant';
-Vue.use(TreeSelect);
-import { Cell, CellGroup } from 'vant';
-Vue.use(Cell).use(CellGroup);
-import { NavBar } from 'vant';
-Vue.use(NavBar);
-import { Checkbox, CheckboxGroup } from 'vant';
-Vue.use(Checkbox).use(CheckboxGroup);
-import { Button } from 'vant';
-Vue.use(Button);
-import { Row, Col } from 'vant';
-Vue.use(Row).use(Col);
-import { Tab, Tabs } from 'vant';
-Vue.use(Tab).use(Tabs);
-import { Panel } from 'vant';
-Vue.use(Panel);
-
 import store from './store'
-import './mock/mockServer'
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({
